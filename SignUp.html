@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Sign Up</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="sign-up">
+      <section id="sign-up">
+        <div class="subscribe">
+          <h2>Get unlimited access!</h2>
+          <p class="Sub"><b>5$ per month</b></p>
+          <form id="form" action="https://www.freecodecamp.com/email-submit">
+            <input
+              name="email"
+              id="email"
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <input id="submit" type="submit" value="Subscribe" class="btn" />
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
