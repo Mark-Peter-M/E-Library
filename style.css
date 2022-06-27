@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   position: relative;
   margin: 0;
@@ -31,8 +30,8 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #ddd;
-  transition: top 0.3s;
+  background-color: #000000;
+  transition: top 0.2s ease-in-out;
 }
 
 @media (max-width: 600px) {
@@ -88,6 +87,9 @@ nav {
     padding-bottom: 5px;
   }
 }
+.nav-link {
+  color: #ffffff;
+}
 .nav-link:hover {
   text-decoration: underline;
 }
@@ -106,6 +108,9 @@ nav > ul {
     padding: 0;
     gap: 0;
   }
+}
+.dropbtn {
+  color: #ffffff;
 }
 .dropdown-content {
   display: none;
@@ -128,21 +133,57 @@ nav > ul {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+#description h1 {
+  font-size: calc(8px + 5vh);
+  line-height: calc(10px + 10vh);
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+    0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
 
-#description {
-  background: #ddd;
-  margin: 0 auto;
-  padding: 1px;
-  font-size: 1.1rem;
+  font-family: "Sacramento", cursive;
   text-align: center;
-  max-width: 600px;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+#description {
+  margin: 0 auto;
+  padding: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  background: #222;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 7px,
+    rgba(0, 0, 0, 0.8) 9px,
+    rgba(0, 0, 0, 0.8) 13px,
+    transparent 13px
+  );
+  max-width: 800px;
   margin-top: 110px;
   border: solid black 1px;
   border-radius: 15px;
 }
-.desc {
-  font-size: 1.3rem;
-  text-decoration: underline;
+@keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+      0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
 }
 #search {
   margin: 0 auto;
@@ -152,7 +193,7 @@ nav > ul {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 125px;
 }
 @media (max-width: 650px) {
   #search {
@@ -181,7 +222,7 @@ nav > ul {
 /*Style the submit button */
 .search button {
   width: 40px;
-  padding: 10px;
+  padding: 11.5px;
   background: #2196f3;
   color: white;
   font-size: 17px;
@@ -205,12 +246,17 @@ nav > ul {
   display: table;
 }
 .SubAbo {
-  margin-top: 20px;
-  height: 315px;
+  margin: 0 auto;
+  margin-top: 6%;
+  margin-bottom: 2%;
+  max-width: 1000px;
+  width: 100%;
+  height: 600px;
+  background: #f1f1f1;
 
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 @media (max-width: 810px) {
   .SubAbo {
@@ -225,11 +271,22 @@ nav > ul {
 }
 
 #sign-up {
-  width: 355px;
+  margin: 0 auto;
+  margin-top: 6%;
+  margin-bottom: 2%;
+  max-width: 1000px;
+  width: 100%;
+  height: 600px;
+  background: #f1f1f1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .subscribe {
-  max-width: 355px;
-  height: 100%;
+  max-width: 500px;
+  height: 300px;
   padding: 0 10px 0 10px;
   background-color: #f1c40f;
 
@@ -249,6 +306,7 @@ h2 {
   border-radius: 10px;
   margin-top: 20px;
 }
+
 #sign-up input[type="email"] {
   max-width: 300px;
   width: 100%;
@@ -272,38 +330,60 @@ h2 {
   background: #0b7dda;
 }
 h3 {
-  margin: 0 auto;
-  margin-top: 20px;
-
+  margin-bottom: 5vw;
   max-width: 300px;
   width: 100%;
   text-align: center;
   font-size: 1.5rem;
   background-color: #f1c40f;
+
+  animation-duration: 5s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 70%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: -70%;
+    width: 100%;
+  }
 }
 #Free-Trial {
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 6%;
+  margin-bottom: 2%;
   max-width: 1000px;
   width: 100%;
+  height: 100%;
+  background-color: #ffffff;
 
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 }
-
 .product {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  width: calc(100% / 3);
+  width: 250px;
   height: 300px;
   margin: 10px;
   border: 1px solid #000;
   border-radius: 3px;
   background-color: #f1f1f1;
+}
+.product:hover .level {
+  opacity: 0;
 }
 @media (max-width: 800px) {
   .product {
@@ -317,6 +397,7 @@ h3 {
 }
 .level {
   background-color: #ddd;
+  opacity: 0.7;
   padding: 15px 0;
   width: 100%;
   text-transform: uppercase;
@@ -334,11 +415,38 @@ h3 {
 }
 .btn:hover {
   background-color: orange;
-  transition: background-color 1s;
+  transition: 1s;
 }
+#Finance {
+  background-image: url("Images/Rich Dad Poor Dad.jpg");
+  background-size: 100% 100%;
+}
+#Philosophy {
+  background-image: url("Images/The Daily Stoic.jpg");
+  background-size: 100% 100%;
+}
+#Psychology {
+  background-image: url("Images/48 Laws of Power.jpg");
+  background-size: 100% 100%;
+}
+#Sociology {
+  background-image: url("Images/Sociological Imagination.jpg");
+  background-size: 100% 100%;
+}
+#History {
+  background-image: url("Images/History.jpg");
+  background-size: 100% 100%;
+}
+#Politics {
+  background-image: url("Images/Politics.jpg");
+  background-size: 100% 100%;
+}
+
 footer {
-  margin-top: 50px;
-  background-color: #ddd;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
