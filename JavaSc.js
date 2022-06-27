@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 const f = document.getElementById('search');
 const q = document.getElementById('query');
@@ -12,3 +13,15 @@ function submitted(event) {
 }
 f.addEventListener('submit', submitted);
 
+=======
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("header").style.top = "0";
+  } else {
+    document.getElementById("header").style.top = "-70px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+>>>>>>> 088b2077b0ca8cdc4b86c89625a46506233c4dd6
